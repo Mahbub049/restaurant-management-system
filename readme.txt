@@ -1,0 +1,4 @@
+This project is about restaurent management system. Which will be developed using HTML, CSS, JS, PHP, LARAVEL & some other functionalities.
+Project is being maintained by three students of BICE-2020. The name includes Tasmia Raisa Hasan (2054901014), Nazifa Afroz Chowdhury (2054901027) & Muhammad Mahbub Sarwar Shafi (2054901049)
+The frontend part will be developed within 25th september and at the end of the october the full project will be ready for deployment.
+The project will not follow any engineering approach to complete the project rather it will follow the exploratory style to complete the project part by part by the contributors using github.
