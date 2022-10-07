@@ -1,0 +1,26 @@
+After pulling all the codes. To run on your browser:
+
+1. Open Xampp and turn on Apache & MySQL.
+2. Then go to the restaurent-management-folder open CMD and type
+			php artisan serve
+3. Then open another CMD there and type and enter
+			npm run dev
+4. Then give command
+			php artisan migrate
+Probably after this database will be added to the phpmyadmin. If no data inside database follow below,
+Add them using the template provided to you {using admin view}
+
+You need to install node.js and also jetpack
+
+1. To install jetpack run this command opening CMD anywhere 
+		   composer require laravel/jetstream
+2. Download Nodejs from below link and install
+		   https://nodejs.org/en/download/
+
+3. After installing run
+				npm install
+				npm run dev
+
+
+***instead of food.blade.php i have used menu.blade.php
+***Also i have converted each html files into blade files.
