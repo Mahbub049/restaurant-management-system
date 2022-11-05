@@ -16,6 +16,7 @@
                         <li class="scroll-to-section"><a href="/menu">Menu</a></li>
                         <li class="scroll-to-section"><a href="/chefs">Chefs</a></li> 
                         <li class="scroll-to-section"><a href="/contact">Contact Us</a></li>
+                        <li class="scroll-to-section"><a href="singup.html">Cart[0]</a></li>
                         <li>
                             @if (Route::has('login'))
                             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -34,8 +35,8 @@
                                 @endauth
                             </div>
                         @endif</li>
-                        {{-- <li class="scroll-to-section"><a href="singup.html">Sign Up</a></li> 
-                        <li class="scroll-to-section"><a href="signin.html">Log In</a></li> --}}
+                         
+                        {{-- <li class="scroll-to-section"><a href="signin.html">Log In</a></li> --}}
                     </ul>
                     
                     <!--  Menu End  -->
