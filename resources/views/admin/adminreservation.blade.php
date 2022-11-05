@@ -6,19 +6,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	<title>The Red Chamber</title>
 	<style>
 		.eachlabel {
 border-radius: 5px;
 background-color: #000000;
 padding: 20px;
-width: 200%;
+width: 190%;
 margin-left: 5%
 }
 
 #customers {
 font-family: Arial, Helvetica, sans-serif;
 border-collapse: collapse;
-width: 200%;
+width: 190%;
 margin-left: 5%;
 }
 

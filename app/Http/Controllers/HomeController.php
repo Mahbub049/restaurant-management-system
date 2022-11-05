@@ -104,18 +104,36 @@ class HomeController extends Controller
     }
 
     public function orderconfirm(Request $request)
-    {
-        foreach($request->foodname as $key =>$foodname){
-            $data=new order;
-            $data->foodname=$foodname;
-            $data->price=$request->price[$key];
-            $data->quantity=$request->quantity[$key];
-            $data->name=$request->name;
-            $data->phone=$request->phone;
-            $data->address=$request->address;
-            $data->save();
-        }
-            return redirect()->back();
-    }
+{
+
+
+foreach($request->foodname as $key =>$foodname)
+
+{
+
+    $data=new order;
+
+    $data->foodname=$foodname;
+
+    $data->price=$request->price[$key];
+
+    $data->quantity=$request->quantity[$key];
+
+    $data->name=$request->name;
+
+    $data->phone=$request->phone;
+
+    $data->address=$request->address;
+
+
+    $data->save();
+
+
+}
+
+return redirect()->back();
+
+
+}
 }
 

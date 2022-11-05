@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>The Red Chamber</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     
 </head>
 <body>
@@ -22,14 +23,14 @@ border-radius: 5px;
 background-color: #000000;
 padding: 20px;
 width: 200%;
-margin-left: 5%
+margin-left: -10%;
 }
 
 #customers {
 font-family: Arial, Helvetica, sans-serif;
 border-collapse: collapse;
 width: 200%;
-margin-left: 5%;
+margin-left: -10%;
 }
 
 #customers td, #customers th {
@@ -73,6 +74,7 @@ background-color: #f06c5b;;
 color: white;
 }
         </style>
+        <title>The Red Chamber</title>
       </head>
       <body>
         <div class="container-scroller">

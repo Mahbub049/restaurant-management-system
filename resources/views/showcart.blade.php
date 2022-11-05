@@ -176,7 +176,7 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="/" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="#about">About</a></li>
                            	
                         <!-- 
@@ -261,9 +261,8 @@
             @foreach($data as $data)
             <tr align="center">
                 <td><input type="text" name="foodname[]" value="{{ $data->title }}" hidden> {{ $data->title }}</td>
-                <td><input type="text" name="price" value="{{ $data->price }}" hidden>{{ $data->price }}</td>
-                <td><input type="text" name="quantity" value="{{ $data->quantity }}" hidden>{{ $data->quantity }}</td>
-            
+                <td><input type="text" name="price[]" value="{{ $data->price }}" hidden>{{ $data->price }}</td>
+                <td><input type="text" name="quantity[]" value="{{ $data->quantity }}" hidden>{{ $data->quantity }}</td>
             </tr>
             @endforeach
             </table>

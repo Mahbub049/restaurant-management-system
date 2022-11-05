@@ -95,6 +95,7 @@ table{
 }
 
     </style>
+    <title>The Red Chamber</title>
   </head>
   <body>
     <div class="container-scroller" >

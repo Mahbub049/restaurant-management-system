@@ -1,4 +1,29 @@
+<style>
+    input[type=number], select {
+        width: 45%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 4px;
+        box-sizing: border-box;
+}
 
+input[type=submit] {
+  width: 45%;
+  background-color: #f06c5b;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #f06c5b;
+}
+</style>
 
     <!-- ***** Menu Area Starts ***** -->
     <section class="section" id="menu">
@@ -32,15 +57,15 @@
                                 <h1 class='title'>{{ $data->title }}</h1>
                                 <p class='description'>{{ $data->description }}</p>
                               <div class="main-text-button">
-                                <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
                                  </div>
 
                                 </div>
                             </div>
 
                         
-                        <input type="number" name="quantity" min="1" value="1" style="width: 80px;">
-                        <input type="submit" value="add cart">
+                        <input type="number" name="quantity" min="1" value="1" style="margin: 3%">
+                        <input type="submit" value="Add to cart">
                         
                         
                                                      
