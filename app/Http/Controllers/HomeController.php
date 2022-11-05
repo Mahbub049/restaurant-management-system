@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Food; 
+use App\Models\Foodchef;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
     }
     public function chefs()
     {
-        return view("chefs");
+        $data2=foodchef::all();
+        return view("chefs",compact("data2"));
     }
     public function contact()
     {
