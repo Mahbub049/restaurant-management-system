@@ -45,7 +45,53 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #000000;
   padding: 20px;
-  width: 300%;
+  width: 150%;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #000000;}
+
+#customers tr:hover {background-color: rgb(255, 69, 69);}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f06c5b;
+  color: white;
+}
+
+table{
+    margin-top: 30px;
+}
+
+.space{
+    margin-bottom: 3%;
+}
+
+.btn:link, .btn:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid #f06c5b;;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover, .btn:active {
+  background-color: #f06c5b;;
+  color: white;
 }
 
     </style>
@@ -74,6 +120,37 @@ input[type=submit]:hover {
             <input type="submit" value="Save">
         </div>
     </form>
+    
+    <div>
+        <table id="customers" bgcolor="black" style="width: 150%">
+            <h3 class="eachlabel" style="text-align: center; margin-top: 2%;">Show Food Items</h3>
+            <tr>
+                <th style="padding: 30px; text-align: center">Chef Name</th>
+                <th style="padding: 30px; text-align: center">Speciality</th>
+                <th style="padding: 30px; text-align: center">Image</th>
+                <th style="padding: 30px; text-align: center">Action</th>
+                <th style="padding: 30px; text-align: center">Action2</th>
+    
+            </tr>
+    
+    
+            @foreach($data as $data)
+    
+            <tr align="center">
+            
+                <td>{{$data->name}}</td>
+                <td>{{$data->speciality}}</td>
+                <td><img height="200" width="200" src="/chefimage/{{$data->image}}"></td>
+                <td><a class="btn" href="{{url('/updatechef',$data->id)}}">Update</a></td>
+                <td><a class="btn" href="{{url('/deletechef',$data->id)}}">Delete</a></td>
+            </tr>
+    
+            @endforeach
+        </table>
+    </div>
+    <div style="margin-top: 7%">
+        --------
+    </div>
     </div>
     </div>
     @include("admin.adminscript")

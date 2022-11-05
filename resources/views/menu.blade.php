@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <title>The Red Chamber</title>
-
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
-
-    <link rel="stylesheet" href="assets/css/restaurent.css">
-
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
-
-    <link rel="stylesheet" href="assets/css/lightbox.css">
-
-    </head>
-    
-    <body>
-    
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-  
-    @include("navbar")
-    
     <!-- ***** Menu Area Starts ***** -->
     <section class="section" id="menu">
         <div class="container">
@@ -56,435 +15,49 @@
         <div class="menu-item-carousel">
             <div class="col-lg-12">
                 <div class="owl-menu-item owl-carousel">
-                    @foreach($data as $data)
+
+
+
+                  @foreach($data as $data)
+
+                  <form action="{{url('/addcart',$data->id)}}" method="post">
+
+                    @csrf
+
                     <div class="item">
+                      
                         <div  style="background-image: url('/foodimage/{{ $data->image }}')" class='card'>
-                            <div class="price"><h6>৳{{ $data->price }}</h6></div>
+                    <div class="price"><h6>৳{{ $data->price }}</h6></div>
                             <div class='info'>
-                              <h1 class='title'>{{ $data->title }}</h1>
-                              <p class='description'>{{ $data->description }}</p>
+                                <h1 class='title'>{{ $data->title }}</h1>
+                                <p class='description'>{{ $data->description }}</p>
                               <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
+                                <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                                 </div>
 
-                    {{-- <div class="item"> --}}
-                        {{-- <div class='card card1'>
-                            <div class="price"><h6>৳895</h6></div>
-                            <div class='info'>
-                              <h1 class='title'>Braised Beef Shank</h1>
-                              <p class='description'>Among the most popular cold appetisers in China, this recipe features thinly sliced beef shank.</p>
-                              <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card2'>
-                            <div class="price"><h6>৳545</h6></div>
-                            <div class='info'>
-                              <h1 class='title'>Firecracker Shrimp</h1>
-                              <p class='description'>Spring roll wrapped whole shrimps that taste as good as they look and yo will love it!</p>
-                              <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card3'>
-                            <div class="price"><h6>৳595</h6></div>
-                            <div class='info'>
-                              <h1 class='title'>Siu Mai (Shumai)</h1>
-                              <p class='description'>Tasty open-faced dumplings filled with shrimps. Having originated from Mongolia.</p>
-                              <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card4'>
-                            <div class="price"><h6>৳595</h6></div>
-                            <div class='info'>
-                              <h1 class='title'>Sichun Chili Oil Wontons</h1>
-                              <p class='description'>Among the most popular cold appetisers in Chine, this recipe features thinly sliced beef shank.</p>
-                              <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card5'>
-                            <div class="price"><h6>৳595</h6></div>
-                            <div class='info'>
-                              <h1 class='title'>Chicken Meatball Soup</h1>
-                              <p class='description'>Vibrant light and fresh, this clear soup contains energy packed ingredients including tofu.</p>
-                              <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class='card card3'>
-                            <div class="price"><h6>৳595</h6></div>
-                            <div class='info'>
-                              <h1 class='title'>Siu Mia (Shumai)</h1>
-                              <p class='description'>Tasty open-faced dumplings filled with shrimps. Having originated from Mongolia.</p>
-                              <div class="main-text-button">
-                                  <div class="scroll-to-section"><a href="contact.html">Make Reservation <i class="fa fa-angle-down"></i></a></div>
-                              </div>
-                            </div>
-                        </div>
-                    </div> --}}
-                {{-- </div>
-            </div>
-        </div> --}}
-    <!-- ***** Menu Area Ends ***** -->
-
-    <!-- ***** Menu Area Starts ***** -->
-    <section class="section" id="offers">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-4 text-center">
-                    <div class="section-heading">
-                        <h6>Red Chamber Week</h6>
-                        <h2>This Week’s Special Meal Offers</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row" id="tabs">
-                        <div class="col-lg-12">
-                            <div class="heading-tabs">
-                                <div class="row">
-                                    <div class="col-lg-6 offset-lg-3">
-                                        <ul>
-                                          <li><a href='#tabs-1'><img src="assets/images/tab-icon-01.png" alt="">Breakfast</a></li>
-                                          <li><a href='#tabs-2'><img src="assets/images/tab-icon-02.png" alt="">Lunch</a></a></li>
-                                          <li><a href='#tabs-3'><img src="assets/images/tab-icon-03.png" alt="">Dinner</a></a></li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <section class='tabs-content'>
-                                <article id='tabs-1'>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="left-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-01.png" alt="">
-                                                            <h4>Boiled Beef in Chili Oil</h4>
-                                                            <p>A classic traditional dish, belonging to Sichuan cuisine.</p>
-                                                            <div class="price">
-                                                                <h6>৳895</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-02.png" alt="">
-                                                            <h4>Peking Duck</h4>
-                                                            <p>A dish originated from Beijing that has been prepared since the imperial era.</p>
-                                                            <div class="price">
-                                                                <h6>৳1950</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-03.png" alt="">
-                                                            <h4>Braised Goose with Chinese Herbs</h4>
-                                                            <p>The most tender meat is cooked in a rich svoury broth with fresh herbs.</p>
-                                                            <div class="price">
-                                                                <h6>৳1495</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="right-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-04.png" alt="">
-                                                            <h4>Cantonese Roast Duck</h4>
-                                                            <p>Among the most popular roasted meat dishes common in Hong Kong.</p>
-                                                            <div class="price">
-                                                                <h6>৳1440</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-05.png" alt="">
-                                                            <h4>Chicken Spicey Sichuan</h4>
-                                                            <p>A traditional spicy dish of chicken and dried red chilies</p>
-                                                            <div class="price">
-                                                                <h6>৳645</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-06.png" alt="">
-                                                            <h4>Soy Sauce Chicken</h4>
-                                                            <p> A traditional Cantonese cuisine dish made of chicken cooked with soy sauce.</p>
-                                                            <div class="price">
-                                                                <h6>৳690</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>  
-                                <article id='tabs-2'>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="left-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-04.png" alt="">
-                                                            <h4>Cantonese Roast Duck</h4>
-                                                            <p>Among the most popular roasted meat dishes common in Hong Kong.</p>
-                                                            <div class="price">
-                                                                <h6>৳1440</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-05.png" alt="">
-                                                            <h4>Chicken Spicey Sichuan</h4>
-                                                            <p>A traditional spicy dish of chicken and dried red chilies</p>
-                                                            <div class="price">
-                                                                <h6>৳645</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-06.png" alt="">
-                                                            <h4>Soy Sauce Chicken</h4>
-                                                            <p>A traditional Cantonese cuisine dish made of chicken cooked with soy sauce.</p>
-                                                            <div class="price">
-                                                                <h6>৳690</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="right-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-01.png" alt="">
-                                                            <h4>Boiled Beef in Chili Oil</h4>
-                                                            <p>A classic traditional dish, belonging to Sichuan cuisine.</p>
-                                                            <div class="price">
-                                                                <h6>৳895</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-02.png" alt="">
-                                                            <h4>Peking Duck</h4>
-                                                            <p>A dish originated from Beijing that has been prepared since the imperial era.</p>
-                                                            <div class="price">
-                                                                <h6>৳1950</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-03.png" alt="">
-                                                            <h4>Braised Goose with Chinese Herbs</h4>
-                                                            <p>The most tender meat is cooked in a rich svoury broth with fresh herbs.</p>
-                                                            <div class="price">
-                                                                <h6>৳1495</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>  
-                                <article id='tabs-3'>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="left-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-05.png" alt="">
-                                                            <h4>Chicken Spicey Sichuan</h4>
-                                                            <p>A traditional spicy dish of chicken and dried red chilies</p>
-                                                            <div class="price">
-                                                                <h6>৳645</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-03.png" alt="">
-                                                            <h4>Braised Goose with Chinese Herbs</h4>
-                                                            <p>The most tender meat is cooked in a rich svoury broth with fresh herbs.</p>
-                                                            <div class="price">
-                                                                <h6>৳1495</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-02.png" alt="">
-                                                            <h4>Peking Duck</h4>
-                                                            <p>A dish originated from Beijing that has been prepared since the imperial era.</p>
-                                                            <div class="price">
-                                                                <h6>৳1950</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="row">
-                                                <div class="right-list">
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-06.png" alt="">
-                                                            <h4>Soy Sauce Chicken</h4>
-                                                            <p>A traditional Cantonese cuisine dish made of chicken cooked with soy sauce.</p>
-                                                            <div class="price">
-                                                                <h6>৳690</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-01.png" alt="">
-                                                            <h4>Boiled Beef in Chili Oil</h4>
-                                                            <p>A classic traditional dish, belonging to Sichuan cuisine.</p>
-                                                            <div class="price">
-                                                                <h6>৳895</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="tab-item">
-                                                            <img src="assets/images/tab-item-04.png" alt="">
-                                                            <h4>Cantonese Roast Duck</h4>
-                                                            <p>Among the most popular roasted meat dishes common in Hong Kong.</p>
-                                                            <div class="price">
-                                                                <h6>৳1440</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>   
-                            </section>
-                        </div>
+
+                        
+                        <input type="number" name="quantity" min="1" value="1" style="width: 80px;">
+                        <input type="submit" value="add cart">
+                        
+                        
+                                                     
+                    </div>
+
+                    </form>
+
+                        
+                    @endforeach
+
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ***** Chefs Area Ends ***** --> 
-    
-    <!-- ***** Footer Start ***** -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-xs-12">
-                    <div class="right-text-content">
-                            <ul class="social-icons">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="logo">
-                        <a href="index.html"><img src="assets/images/chamber-logo.png" alt="" height="90px" width="170px"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-12">
-                    <div class="left-text-content">
-                        <p>© Copyright Red Chamber.
-                        
-                        <br>Designed By: Mahbub, Nazifa & Tasmia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-    <!-- Plugins -->
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/accordions.js"></script>
-    <script src="assets/js/datepicker.js"></script>
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/slick.js"></script> 
-    <script src="assets/js/lightbox.js"></script> 
-    <script src="assets/js/isotope.js"></script> 
-    
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
-    <script>
-
-        $(function() {
-            var selectedClass = "";
-            $("p").click(function(){
-            selectedClass = $(this).attr("data-rel");
-            $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("."+selectedClass).fadeOut();
-            setTimeout(function() {
-              $("."+selectedClass).fadeIn();
-              $("#portfolio").fadeTo(50, 1);
-            }, 500);
-                
-            });
-        });
-
-    </script>
-  </body>
-</html>
+    <!-- ***** Menu Area Ends ***** -->
