@@ -39,11 +39,17 @@ class AdminController extends Controller
     public function update(Request $request, $id){
         $data=food::find($id);
         $image = $request->image;
+<<<<<<< HEAD
         
         if ($image){
             $imagename =time().'.'.$image->getClientOriginalExtension();
             $request->image->move('chefimage',$imagename);$data->image=$imagename;
           }
+=======
+        $imagename = time().'.'.$image->getClientOriginalExtension();
+        $request->image->move('foodimage',$imagename);
+        $data->image=$imagename;
+>>>>>>> b8e3ea041667a72813f1cc0696277dd610cc1e9a
         
         $data->title=$request->title;
         $data->price=$request->price;
